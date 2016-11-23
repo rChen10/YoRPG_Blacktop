@@ -72,7 +72,7 @@ public class YoRPG
 	}
 	catch ( IOException e ) { }
 
-	s = "What doth thou speacilize in? \n";
+	s = "What doth thou specialize in? \n";
 	s += "\t1: Warrior\n";
 	s += "\t2: Mage\n";
 	s += "\t3: Rogue\n";
@@ -87,7 +87,7 @@ public class YoRPG
 	catch ( IOException e ) { }
 
 	
-	s = "Intrepid warrior, what doth thy call thyself? (State your name): ";
+	s = "Intrepid adventurer, what doth thy call thyself? (State your name): ";
 	System.out.print( s );
 
 	try {
