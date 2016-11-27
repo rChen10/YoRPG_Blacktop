@@ -4,11 +4,17 @@
 // 2016-11-18
 // Team Blacktop - Samantha, Datian, Ricky
 
+import java.io.*;
+import java.util.*;
+
 public abstract class Character{
     protected int life;
     protected int strength;
     protected int defense;
     protected  double attackRating;
+
+    protected InputStreamReader isr;
+    protected BufferedReader in;
 
     /* stats indexes are:
        0 - strength, 1 - defense */
@@ -59,6 +65,9 @@ public abstract class Character{
         mon.lowerHP(damage);
 	return damage;
     }
+
+    //specialized prompt for each class; selects which spell methods to invoke
+    public abstract void magicPrompt(Character mon);
 
     // Prepares for attack; decreases defense, increases attack
     public abstract void specialize();
