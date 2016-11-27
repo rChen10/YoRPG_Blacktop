@@ -10,6 +10,11 @@ public abstract class Character{
     protected int defense;
     protected  double attackRating;
 
+    /* stats indexes are:
+       0 - strength, 1 - defense */
+    protected int[] stats = new int[2];
+    protected double savedAttackRating;
+
     // Initialize variables
     public Character(){	
     }
@@ -58,7 +63,11 @@ public abstract class Character{
     // Prepares for attack; decreases defense, increases attack
     public abstract void specialize();
     // Returns to normal by resetting defense and attack
-    public abstract void normalize();
+    public void normalize(){
+	strength = stats[0];
+	defense = stats[1];
+	attackRating = savedAttackRating;
+    }
     // Returns string describing class name
     public abstract String about();
     /* Prepares for attack; decreases defense, increases attack

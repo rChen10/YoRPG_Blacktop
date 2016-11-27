@@ -7,6 +7,10 @@ public class Rogue extends Character{
 	strength = 80;
 	defense = 10;
 	attackRating = 0.7;
+	
+	stats[0] = strength;
+	stats[1] = defense;
+	savedAttackRating = attackRating;
     }
 
     public String about(){
@@ -16,12 +20,6 @@ public class Rogue extends Character{
     public String getName(){
 	return name;
     }
-
-    public void normalize(){
-	setDef(10);
-	setStr(80);
-    }
-
     
     public void specialize(){
 	strength += 10;

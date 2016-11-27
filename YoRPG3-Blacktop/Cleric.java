@@ -14,6 +14,10 @@ public class Cleric extends Character{
 	strength = 50;
 	defense = 20;
 	attackRating = 0.3;
+	
+	stats[0] = strength;
+	stats[1] = defense;
+	savedAttackRating = attackRating;
     }
 
     public String about(){
@@ -22,11 +26,6 @@ public class Cleric extends Character{
 
     public String getName(){
 	return name;
-    }
-
-    public void normalize(){
-	setDef(20);
-	setStr(50);
     }
     
     public void specialize(){

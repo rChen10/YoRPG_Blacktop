@@ -14,6 +14,10 @@ public class Archer extends Character{
 	strength = 120;
 	defense = 10;
 	attackRating = 0.5;
+
+	stats[0] = strength;
+	stats[1] = defense;
+	savedAttackRating = attackRating;
     }
 
     public String about(){
@@ -22,11 +26,6 @@ public class Archer extends Character{
 
     public String getName(){
 	return name;
-    }
-    
-    public void normalize(){
-	setDef(10);
-	setStr(120);
     }
     
     public void specialize(){

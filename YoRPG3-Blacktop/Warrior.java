@@ -14,6 +14,11 @@ public class Warrior extends Character{
 	strength = 100;
 	defense = 40;
 	attackRating = 0.4;
+
+	
+	stats[0] = strength;
+	stats[1] = defense;
+	savedAttackRating = attackRating;
     }
     // returns value of name attribute
     public String getName(){
@@ -23,11 +28,7 @@ public class Warrior extends Character{
     public String about(){
 	return "Warrior";
     }
-
-    public void normalize(){
-	defense = 40;
-	strength = 100;
-    }
+    
     public void specialize(){
 	strength += 10;
 	defense -=10;
