@@ -1,3 +1,10 @@
+// APCS - Pd 3
+// HW#31 - Ye Olde Role Playing Game, Improved 
+// Team Blacktop - Samantha, Datian, Ricky
+
+import java.io.*;
+import java.util.*;
+
 public class Rogue extends Character{
     private String name;
 
@@ -11,6 +18,10 @@ public class Rogue extends Character{
 	stats[0] = strength;
 	stats[1] = defense;
 	savedAttackRating = attackRating;
+
+	// Tools for magicPrompt()
+	isr = new InputStreamReader(System.in);
+	in  = new BufferedReader(isr);
     }
 
     public String about(){
@@ -39,24 +50,24 @@ public class Rogue extends Character{
 	}
 	catch ( IOException e ) { }
 	
-	if (i == 1) Steal(mon);
-	if (i == 2) MaxiSpell(mon);
+	if (i == 1) steal(mon);
+	if (i == 2) swap(mon);
     }
 
-    public void Steal(Character mon){
-	addStrength = (int) (0.5 * Monster.getStrength());
+    public void steal(Character mon){
+	addStrength = (int) (0.5 * mon.getStrength());
 	strength += addStrength;
-	Monster.setStrength(addStrength);
+	mon.setStrength(addStrength);
 	System.out.println( "\n" + name + " dealt " + strength + " points of damage.");
 	
 	defense -= 10;
 	System.out.println( "\n" + name + " lost 10 defense!");
     }
     
-    public void Swap(Character mon){
-	int thisStrength = strength;
-	strength = Monster.getStrength();
-	Monster.setStrength(thisStrength);
+    public void swap(Character mon){
+	int rogueStrength = strength;
+	strength = mon.getStrength();
+	mon.setStrength(thisStrength);
 	
 	System.out.println( "\n" + name + " dealt " + strength + " points of damage.");
 	System.out.println("\n" + name + " lost 10 defense!";

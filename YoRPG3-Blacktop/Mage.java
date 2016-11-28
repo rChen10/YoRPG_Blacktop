@@ -67,7 +67,7 @@ public class Mage extends Character{
 	int d1 = strength * 2;
 	mon.lowerHP(d1);
 	System.out.println( "\n" + name + " dealt " + d1 + " points of damage.");
-	System.out.println("\n" + name + " lost all " + defense + " defense!";
+	System.out.println("\n" + name + " lost all " + defense + " defense!");
 	defense = 0;
     }
 }
