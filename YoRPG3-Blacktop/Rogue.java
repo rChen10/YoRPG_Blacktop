@@ -41,8 +41,8 @@ public class Rogue extends Character{
 	int i = 1;
 	
 	s = "What shall thou cast? \n";
-	s += "\t1: Steal -- Steals Monster's strength by half, and adds it to thy own strength. Loses all defense.\n";
-	s += "\t2: Swap -- Swap strength with opponent, but loses all defense."
+	s += "\t1: Steal -- Doubles thy own strength. Loses all defense.\n";
+	s += "\t2: HealthSteal -- Steal opponent's health and adds it to your own.";
 	System.out.println(s);
 	
 	try {
@@ -51,26 +51,21 @@ public class Rogue extends Character{
 	catch ( IOException e ) { }
 	
 	if (i == 1) steal(mon);
-	if (i == 2) swap(mon);
+	if (i == 2) healthSteal(mon);
     }
 
     public void steal(Character mon){
-	addStrength = (int) (0.5 * mon.getStrength());
-	strength += addStrength;
-	mon.setStrength(addStrength);
+        strength *= 2;
 	System.out.println( "\n" + name + " dealt " + strength + " points of damage.");
 	
 	defense -= 10;
 	System.out.println( "\n" + name + " lost 10 defense!");
     }
     
-    public void swap(Character mon){
-	int rogueStrength = strength;
-	strength = mon.getStrength();
-	mon.setStrength(thisStrength);
+    public void healthSteal(Character mon){
+	life += 20;
+	mon.lowerHP(20);	   
 	
-	System.out.println( "\n" + name + " dealt " + strength + " points of damage.");
-	System.out.println("\n" + name + " lost 10 defense!";
-	defense = 0;
+	System.out.println( "\n" + name + " dealt 20 points of damage.");
 	}
 }

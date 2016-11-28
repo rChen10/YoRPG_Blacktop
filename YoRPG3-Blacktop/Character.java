@@ -11,8 +11,8 @@ public abstract class Character{
     protected int life;
     protected int strength;
     protected int defense;
-    protected  double attackRating;
-	public int money;
+    protected double attackRating;
+    protected double money;
     protected InputStreamReader isr;
     protected BufferedReader in;
 
