@@ -23,8 +23,10 @@ public class Monster extends Character{
     public void specialize(){
 	
     }
-    public static void main(String[] args){
-	
+    public String getStrength(){
+	return strength;
     }
-
+    public void setStrength(int x){
+	strength = x;
+    }
 }
