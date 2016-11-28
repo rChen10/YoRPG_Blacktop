@@ -43,7 +43,7 @@ public class Mage extends Character{
 	
 	s = "What shall thou cast? \n";
 	s += "\t1: SilverSpell -- Full strength attack, but decrease defense by 10.\n";
-	s += "\t2: MaxiSpell -- Double strength, but loses all defense."
+	s += "\t2: MaxiSpell -- Double strength, but loses all defense.";
 	System.out.println(s);
 	
 	try {

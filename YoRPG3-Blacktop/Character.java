@@ -29,6 +29,11 @@ public abstract class Character{
     public void setLife(int nlife){
 	life = nlife;
     }
+
+    public int getStrength(){
+	return strength;
+    }
+    
     // Change strength
     public void setStr(int nStr){
 	strength = nStr;
