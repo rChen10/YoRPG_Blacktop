@@ -4,6 +4,9 @@
 // 2016-11-18
 // Team Blacktop - Samantha, Datian, Ricky
 
+import java.io.*;
+import java.util.*;
+
 public class Cleric extends Character{
     private String name;
 
@@ -18,6 +21,10 @@ public class Cleric extends Character{
 	stats[0] = strength;
 	stats[1] = defense;
 	savedAttackRating = attackRating;
+
+	//to be used in magicPrompt()
+	isr = new InputStreamReader( System.in );
+	in = new BufferedReader( isr );
     }
 
     public String about(){
@@ -31,5 +38,36 @@ public class Cleric extends Character{
     public void specialize(){
 	strength += 10;
 	defense -=10;
+    }
+
+     public void magicPrompt(Character mon){
+	String s;
+	int i = 1;
+
+	s = "What shall thou cast? \n";
+        s += "\t1: Heal -- Restore 40 life.\n";
+	s += "\t2: Purify -- Deal 40 true damage. Lose 10 health.\n";
+	System.out.println(s);
+
+	try {
+	    i = Integer.parseInt( in.readLine() );
+	}
+	catch ( IOException e ) { }
+
+	if (i == 1) heal();
+	if (i == 2) purify(mon);
+    }
+
+    public void heal(){
+	life += 40;
+	System.out.println( "\n" + name + " restored 40 health!");
+    }
+
+    public void purify(Character mon){
+	mon.lowerHP(40);
+	System.out.println( "\n" + name + " dealt 40 points of damage.");
+
+	this.lowerHP(10);
+	System.out.println( "\n" + name + " lost 10 health.");
     }
 }

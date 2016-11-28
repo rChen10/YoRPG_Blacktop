@@ -73,6 +73,6 @@ public class Archer extends Character{
 				    " points of damage.");
 
 	defense -= 10;
-	System.out.println( "\n" + name + "lost 10 defense!");
+	System.out.println( "\n" + name + " lost 10 defense!");
     }
 }
