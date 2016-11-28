@@ -12,7 +12,7 @@ public abstract class Character{
     protected int strength;
     protected int defense;
     protected  double attackRating;
-
+	public int money;
     protected InputStreamReader isr;
     protected BufferedReader in;
 
@@ -82,6 +82,8 @@ public abstract class Character{
     /* Prepares for attack; decreases defense, increases attack
     public static void main(String[] args){
 	
+	public int changeMoney(int dollas){
+		money = money + dollas;
     }
     */
 }
